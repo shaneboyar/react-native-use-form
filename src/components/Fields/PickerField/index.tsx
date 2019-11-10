@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewStyle, Text, TextStyle } from 'react-native';
-import PickerItem, { OptionProps } from '@UI/Picker';
+import Picker, { OptionProps } from '@UI/Picker';
 import styles from './styles';
 
 export interface PickerFieldProps {
@@ -15,7 +15,7 @@ export interface PickerFieldProps {
   containerStyle?: ViewStyle;
 }
 
-export const PickerField = ({
+const PickerField = ({
   field: { setValue, value = '' },
   label,
   labelStyles,
@@ -30,7 +30,7 @@ export const PickerField = ({
     return (
       <View style={[styles.container, containerStyle]}>
         <Text style={[styles.label, labelStyles]}>{label}</Text>
-        <PickerItem
+        <Picker
           onChangeText={(newValue: string) => setValue(newValue)}
           label={label}
           value={value}

@@ -107,10 +107,8 @@
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/resolver": {
-      "babel-module": {},
       "node": {
-        "paths": ["./src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+        "paths": ["src"]
       }
     }
   }

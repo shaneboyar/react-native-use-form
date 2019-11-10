@@ -1,61 +1,13 @@
 import React, { ReactElement, ReactNode } from 'react';
-import { Picker as RNPicker, View, ViewStyle, TextStyle, StyleProp } from 'react-native';
+import {
+  Picker as RNPicker,
+  View,
+  ViewStyle,
+  TextStyle,
+  StyleProp,
+} from 'react-native';
 import { ChevronDownIcon } from 'src/assets/icons';
 import styles from './styles';
-
-export interface OptionProps {
-  label: string;
-  value: string;
-}
-
-export interface Props {
-  label: string;
-  value: string;
-  onChangeText(value: string): void;
-  options: OptionProps[];
-  fieldStyle?: ViewStyle;
-  containerStyle?: ViewStyle;
-  inputStyle?: TextStyle;
-  placeholderStyle?: TextStyle;
-}
-
-const iosIcon = <ChevronDownIcon style={styles.arrow} />;
-
-
-const Picker = ({
-  label,
-  value,
-  onChangeText,
-  options,
-  fieldStyle,
-  containerStyle,
-  inputStyle,
-  placeholderStyle,
-}: Props) => (
-  <View style={[styles.container, containerStyle]}>
-    <CustomPicker
-      selected={value}
-      onSelect={onChangeText}
-      key={label}
-      iosHeader={label}
-      iosIcon={iosIcon}
-      style={[styles.picker, fieldStyle]}
-      textStyle={[styles.input, inputStyle]}
-      placeholder={label}
-      placeholderStyle={[styles.placeholder, placeholderStyle]}
-      accessibilityLabel={`${label} Dropdown`}
-    >
-      <RNPicker.Item label={label} value="" key={label} />
-      {options.map(({ label, value }: OptionProps) => (
-        <RNPicker.Item label={label} value={value} key={value} />
-      ))}
-    </CustomPicker>
-  </View>
-);
-
-export default Picker;
-
-
 
 interface CustomPickerProps<T> {
   selected: T;
@@ -100,3 +52,54 @@ function CustomPicker<T>({
     </RNPicker>
   );
 }
+
+export interface OptionProps {
+  label: string;
+  value: string;
+}
+
+export interface Props {
+  label: string;
+  value: string;
+  onChangeText(value: string): void;
+  options: OptionProps[];
+  fieldStyle?: ViewStyle;
+  containerStyle?: ViewStyle;
+  inputStyle?: TextStyle;
+  placeholderStyle?: TextStyle;
+}
+
+const iosIcon = <ChevronDownIcon style={styles.arrow} />;
+
+const Picker = ({
+  label,
+  value,
+  onChangeText,
+  options,
+  fieldStyle,
+  containerStyle,
+  inputStyle,
+  placeholderStyle,
+}: Props) => (
+  <View style={[styles.container, containerStyle]}>
+    <CustomPicker
+      selected={value}
+      onSelect={onChangeText}
+      key={label}
+      iosHeader={label}
+      iosIcon={iosIcon}
+      style={[styles.picker, fieldStyle]}
+      textStyle={[styles.input, inputStyle]}
+      placeholder={label}
+      placeholderStyle={[styles.placeholder, placeholderStyle]}
+      accessibilityLabel={`${label} Dropdown`}
+    >
+      <RNPicker.Item label={label} value="" key={label} />
+      {options.map(({ label, value }: OptionProps) => (
+        <RNPicker.Item label={label} value={value} key={value} />
+      ))}
+    </CustomPicker>
+  </View>
+);
+
+export default Picker;

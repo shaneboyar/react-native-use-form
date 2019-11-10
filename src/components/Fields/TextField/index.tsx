@@ -35,11 +35,10 @@ const TextField = ({
           placeholder={placeholder}
           label={label}
           value={value}
-          onChangeText={value => setValue(value)}
+          onChangeText={(value: string) => setValue(value)}
           inputStyles={[styles.field, !isValid ? styles.invalid : {}]}
           onBlur={onBlur}
         />
-        {/* TODO: Need to get official errors handling styles */}
         {errors ? (
           <Text style={styles.errorMessage}>{errors.join(' ')}</Text>
         ) : null}

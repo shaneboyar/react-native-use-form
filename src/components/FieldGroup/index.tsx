@@ -3,18 +3,13 @@ import { View, ViewStyle } from 'react-native';
 import { TextFieldProps } from '../Fields/TextField';
 import { PickerFieldProps } from '../Fields/PickerField';
 import { CheckboxFieldProps } from '../Fields/CheckboxField';
-import { AddressFieldsProps } from '../Fields/AddressFields';
 import styles from './styles';
 
 interface Props {
   children: React.ReactNodeArray;
 }
 
-type FormFieldProps =
-  | TextFieldProps
-  | PickerFieldProps
-  | CheckboxFieldProps
-  | AddressFieldsProps;
+type FormFieldProps = TextFieldProps | PickerFieldProps | CheckboxFieldProps;
 
 const columnStyling: { [id: number]: ViewStyle } = {
   2: styles.twoColumnField,

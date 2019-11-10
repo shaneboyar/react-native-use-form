@@ -14,7 +14,9 @@ export default StyleSheet.create({
     flex: 1,
     marginBottom: scale(8),
   },
-  label: labelStyles,
+  label: {
+    ...labelStyles,
+  },
   field: {
     flexDirection: 'row',
     height: scale(48),

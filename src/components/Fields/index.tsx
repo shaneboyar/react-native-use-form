@@ -1,11 +1,9 @@
-import AddressFields from './AddressFields';
 import CheckboxField from './CheckboxField';
-import PickerField from './PickerField';
 import TextField from './TextField';
+import PickerField from './PickerField';
 
 export default {
-  AddressFields,
   CheckboxField,
   PickerField,
-  TextField
-}
+  TextField,
+};

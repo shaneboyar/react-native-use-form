@@ -2,10 +2,16 @@
   "name": "react-native-use-form",
   "version": "1.0.0",
   "description": "A hook-based form creator for React Native",
-  "main": "index.ts",
-  "types":"index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ./",
+    "eslint": "eslint . --cache --ext .ts,.tsx,.js,.jsx",
+    "eslint:fix": "eslint . --fix --cache --ext .ts,.tsx,.js,.jsx",
+    "stylelint": "stylelint \"src/**/*.(ts|js|tsx|jsx)\"",
+    "tslint": "tslint -p tsconfig.json",
+    "prettier": "prettier \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "npm-run-all --parallel tslint eslint stylelint"
   },
   "repository": {
     "type": "git",
@@ -23,18 +29,36 @@
   },
   "homepage": "https://github.com/shaneboyar/react-native-use-form#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.146",
     "lodash": "^4.17.15",
-    "typescript": "^3.7.2",
-    "@types/lodash": "^4.14.146"
+    "typescript": "^3.7.2"
   },
   "peerDependencies": {
     "react": "^16.11.0",
     "react-native": "^0.61.4"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^3.2.0",
-    "react-native-svg-transformer": "^0.13.0",
     "@types/react": "^16.9.11",
-    "@types/react-native": "^0.60.22"
+    "@types/react-native": "^0.60.22",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "react-native-svg-transformer": "^0.13.0",
+    "stylelint": "^11.1.1",
+    "stylelint-react-native": "^2.1.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0"
   }
 }

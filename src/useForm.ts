@@ -2,13 +2,12 @@ import { useState } from 'react';
 import _ from 'lodash';
 import { ValidatorFunction } from './validators';
 
-
 export type Field<T> = {
   [K in keyof T]: {
     value: T[K];
     errors: string[];
     isValid: boolean;
-  }
+  };
 };
 
 export interface FormState<T> {
@@ -16,10 +15,11 @@ export interface FormState<T> {
   isValid: boolean;
 }
 
-
 function useForm<T>(initialValues: T) {
-
-  const initalFormState: FormState<T> = { fields: {} as Field<T>, isValid: true };
+  const initalFormState: FormState<T> = {
+    fields: {} as Field<T>,
+    isValid: true,
+  };
   _.forEach(initialValues as {}, (value, key) => {
     initalFormState.fields[key as keyof FormState<T>['fields']] = {
       value,
@@ -74,9 +74,9 @@ function useForm<T>(initialValues: T) {
     validators?: ValidatorFunction<T[K]>[]
   ) {
     const field = form.fields[key];
-    !field.isValid &&
-      field.errors.length === 0 &&
+    if (!field.isValid && field.errors.length === 0) {
       validateInitialValue(key, validators);
+    }
 
     function setValue(newValue: T[K]) {
       const errors = validators ? returnErrors(validators, newValue) : [];
