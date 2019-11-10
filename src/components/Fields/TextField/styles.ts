@@ -1,6 +1,6 @@
 import { StyleSheet, TextStyle } from 'react-native';
 import { scale } from 'src/styles/base';
-import { advanceVoid, pure, gray, advanceRed } from 'src/styles/colors';
+import { advanceRed, advanceVoid, gray, pure } from 'src/styles/colors';
 import { scaleFont } from 'src/styles/font';
 
 export const labelStyles: TextStyle = {

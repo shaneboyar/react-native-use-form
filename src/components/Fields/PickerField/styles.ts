@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { scale } from 'src/styles/base';
-import { pure, gray, advanceVoid } from 'src/styles/colors';
+import { advanceVoid, gray, pure } from 'src/styles/colors';
 import { scaleFont } from 'src/styles/font';
 import { labelStyles } from '../TextField/styles';
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import {
-  TextInput,
-  ReturnKeyTypeOptions,
   KeyboardTypeOptions,
+  ReturnKeyTypeOptions,
+  TextInput,
   TextStyle,
 } from 'react-native';
 import styles, { placeholderColor } from './styles';
@@ -14,13 +14,13 @@ export interface SimpleInputProps {
   lastFocusRequestTimestamp?: number;
   keyEnterType?: ReturnKeyTypeOptions;
   keyboardType?: KeyboardTypeOptions;
-  onChangeText(value: string): void;
   onFocus?: () => void;
   onBlur?: () => void;
   onPressKeyEnter?: () => void;
   inputStyles?: TextStyle | TextStyle[];
   placeholder?: string;
   isRequired?: boolean;
+  onChangeText(value: string): void;
 }
 
 const SimpleInput = ({

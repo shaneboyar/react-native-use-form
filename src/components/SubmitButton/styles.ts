@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scaleFont } from 'src/styles/font';
-import { mediumVoid, lightGray } from 'src/styles/colors';
 import { scale } from 'src/styles/base';
+import { lightGray, mediumVoid } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 
 export default StyleSheet.create({
   container: {

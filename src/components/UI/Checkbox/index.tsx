@@ -1,8 +1,7 @@
-// import { CheckboxIcon, CheckedCheckboxIcon } from '@icons';
 import React from 'react';
-import { TouchableOpacity, ViewStyle, StyleProp } from 'react-native';
+import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
 import { scale } from 'src/styles/base';
-import { CheckedCheckboxIcon, CheckboxIcon } from '@icons';
+import { CheckboxIcon, CheckedCheckboxIcon } from '@icons';
 
 export const iconSize = scale(16);
 

@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, ViewStyle, Text, TextStyle } from 'react-native';
 import SimpleInput from '@UI/SimpleInput';
+import React from 'react';
+import { Text, TextStyle, View, ViewStyle } from 'react-native';
 import styles from './styles';
 
 export interface TextFieldProps {
@@ -35,7 +35,7 @@ const TextField = ({
           placeholder={placeholder}
           label={label}
           value={value}
-          onChangeText={(value: string) => setValue(value)}
+          onChangeText={(newValue: string) => setValue(newValue)}
           inputStyles={[styles.field, !isValid ? styles.invalid : {}]}
           onBlur={onBlur}
         />

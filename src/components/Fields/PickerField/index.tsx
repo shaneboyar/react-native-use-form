@@ -1,6 +1,6 @@
-import React from 'react';
-import { View, ViewStyle, Text, TextStyle } from 'react-native';
 import Picker, { OptionProps } from '@UI/Picker';
+import React from 'react';
+import { Text, TextStyle, View, ViewStyle } from 'react-native';
 import styles from './styles';
 
 export interface PickerFieldProps {

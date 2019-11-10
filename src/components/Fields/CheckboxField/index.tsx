@@ -5,8 +5,8 @@ import styles from './styles';
 
 export interface CheckboxFieldProps {
   field: {
-    setValue(value: boolean): void;
     value: boolean;
+    setValue(value: boolean): void;
   };
   label?: string;
   placeholder?: string;

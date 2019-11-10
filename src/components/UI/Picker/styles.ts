@@ -1,7 +1,7 @@
-import { scale } from 'src/styles/base';
-import { lightVoid, advanceVoid, lightGray } from 'src/styles/colors';
-import { scaleFont } from 'src/styles/font';
 import { StyleSheet } from 'react-native';
+import { scale } from 'src/styles/base';
+import { advanceVoid, lightGray, lightVoid } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 
 export default StyleSheet.create({
   container: {

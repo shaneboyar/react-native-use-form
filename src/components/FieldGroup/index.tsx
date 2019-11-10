@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
-import { TextFieldProps } from '../Fields/TextField';
-import { PickerFieldProps } from '../Fields/PickerField';
 import { CheckboxFieldProps } from '../Fields/CheckboxField';
+import { PickerFieldProps } from '../Fields/PickerField';
+import { TextFieldProps } from '../Fields/TextField';
 import styles from './styles';
 
 interface Props {

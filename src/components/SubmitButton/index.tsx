@@ -1,21 +1,21 @@
 import * as React from 'react';
 import {
-  View,
-  TouchableOpacity,
-  ViewStyle,
   Text,
   TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle,
 } from 'react-native';
 // import { FormContext, FormDataReturnType } from '../context';
 import styles from './styles';
 
 export interface SubmitButtonProps {
-  handleSubmit(): void;
   containerStyle?: ViewStyle;
   buttonStyle?: ViewStyle;
   buttonTitleStyle?: TextStyle;
   title?: string;
   disabled: boolean;
+  handleSubmit(): void;
 }
 
 const SubmitButton = ({

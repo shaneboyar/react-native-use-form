@@ -1,6 +1,6 @@
 import CheckboxField from './CheckboxField';
-import TextField from './TextField';
 import PickerField from './PickerField';
+import TextField from './TextField';
 
 export default {
   CheckboxField,

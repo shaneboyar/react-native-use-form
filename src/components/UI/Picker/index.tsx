@@ -1,17 +1,16 @@
 import React, { ReactElement, ReactNode } from 'react';
 import {
   Picker as RNPicker,
+  StyleProp,
+  TextStyle,
   View,
   ViewStyle,
-  TextStyle,
-  StyleProp,
 } from 'react-native';
 import { ChevronDownIcon } from 'src/assets/icons';
 import styles from './styles';
 
 interface CustomPickerProps<T> {
   selected: T;
-  onSelect(option: T): void;
   key: string;
   children: ReactNode;
   iosHeader?: string;
@@ -22,6 +21,7 @@ interface CustomPickerProps<T> {
   placeholder?: string;
   placeholderStyle?: StyleProp<TextStyle>;
   accessibilityLabel?: string;
+  onSelect(option: T): void;
 }
 
 // This constant is related to known bug in react picker
@@ -36,7 +36,9 @@ function CustomPicker<T>({
   ...props
 }: CustomPickerProps<T>) {
   const select = (item: T) => {
-    if (item === selected) return;
+    if (item === selected) {
+      return;
+    }
     onSelect(item);
   };
 
@@ -61,12 +63,12 @@ export interface OptionProps {
 export interface Props {
   label: string;
   value: string;
-  onChangeText(value: string): void;
   options: OptionProps[];
   fieldStyle?: ViewStyle;
   containerStyle?: ViewStyle;
   inputStyle?: TextStyle;
   placeholderStyle?: TextStyle;
+  onChangeText(value: string): void;
 }
 
 const iosIcon = <ChevronDownIcon style={styles.arrow} />;
@@ -95,9 +97,11 @@ const Picker = ({
       accessibilityLabel={`${label} Dropdown`}
     >
       <RNPicker.Item label={label} value="" key={label} />
-      {options.map(({ label, value }: OptionProps) => (
-        <RNPicker.Item label={label} value={value} key={value} />
-      ))}
+      {options.map(
+        ({ label: optionLabel, value: optionValue }: OptionProps) => (
+          <RNPicker.Item label={optionLabel} value={optionValue} key={value} />
+        )
+      )}
     </CustomPicker>
   </View>
 );
