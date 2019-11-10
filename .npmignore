@@ -1,2 +1,8 @@
 node_modules
+.eslintcache
+.vscode
 /lib
+.prettierignore
+.prettierrc
+.stylelintignore
+.stylelintrc

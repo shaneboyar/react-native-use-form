@@ -1,7 +1,7 @@
 import { StyleSheet, TextStyle } from 'react-native';
-import { scale } from 'src/styles/base';
-import { advanceRed, advanceVoid, gray, pure } from 'src/styles/colors';
-import { scaleFont } from 'src/styles/font';
+import { scale } from '../../../styles/Base';
+import { advanceRed, advanceVoid, gray, pure } from '../../../styles/Colors';
+import { scaleFont } from '../../../styles/Font';
 
 export const labelStyles: TextStyle = {
   fontSize: scaleFont(14),
@@ -11,7 +11,7 @@ export const labelStyles: TextStyle = {
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
+    alignSelf: 'stretch',
     marginBottom: scale(8),
   },
   label: {

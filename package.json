@@ -2,12 +2,13 @@
   "name": "react-native-use-form",
   "version": "1.0.0",
   "description": "A hook-based form creator for React Native",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p ./",
-    "eslint": "eslint . --cache --ext .ts,.tsx,.js,.jsx",
-    "eslint:fix": "eslint . --fix --cache --ext .ts,.tsx,.js,.jsx",
+    "eslint": "eslint ./src --cache --ext .ts,.tsx,.js,.jsx",
+    "eslint:fix": "eslint ./src --fix --cache --ext .ts,.tsx,.js,.jsx",
     "stylelint": "stylelint \"src/**/*.(ts|js|tsx|jsx)\"",
     "tslint": "tslint -p tsconfig.json",
     "tslint:fix": "tslint --fix -p tsconfig.json",
@@ -31,7 +32,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.146",
     "lodash": "^4.17.15",
-    "typescript": "^3.7.2"
+    "react-native-svg": "^9.13.3"
   },
   "peerDependencies": {
     "react": "^16.11.0",
@@ -42,7 +43,6 @@
     "@types/react-native": "^0.60.22",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
-    "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.5.0",
@@ -59,6 +59,7 @@
     "stylelint": "^11.1.1",
     "stylelint-react-native": "^2.1.1",
     "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.2"
   }
 }

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scale } from 'src/styles/base';
-import { advanceVoid } from 'src/styles/colors';
-import { scaleFont } from 'src/styles/font';
+import { scale } from '../../../styles/Base';
+import { scaleFont } from '../../../styles/Font';
+import { advanceVoid } from '../../../styles/Colors';
 
 export default StyleSheet.create({
   checkboxFieldContainer: {

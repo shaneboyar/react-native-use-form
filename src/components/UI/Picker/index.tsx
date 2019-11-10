@@ -6,8 +6,8 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import { ChevronDownIcon } from 'src/assets/icons';
 import styles from './styles';
+import { ChevronDownIcon } from '../../../assets/icons';
 
 interface CustomPickerProps<T> {
   selected: T;

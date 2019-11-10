@@ -2,34 +2,15 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "lib/",
-    "paths": {
-      "@icons": ["src/assets/icons"],
-      "@UI/*": ["src/components/UI/*"],
-      "@styles/*": ["src/styles/*"],
-    },
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
     "jsx": "react-native",
     "lib": ["es2017"],
     "moduleResolution": "node",
     "module": "es6",
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
     "strict": true,
     "target": "esnext",
-    "types": [      
-      "lodash",
-      "react",
-      "react-native",
-    ]
+    "types": ["lodash", "react", "react-native"]
   },
   "include": ["src"],
-  "exclude": [
-    "node_modules",
-  ]
+  "exclude": ["node_modules"]
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ViewStyle } from 'react-native';
-import Checkbox from 'src/components/UI/Checkbox';
 import styles from './styles';
+import { Checkbox } from '../../UI';
 
 export interface CheckboxFieldProps {
   field: {

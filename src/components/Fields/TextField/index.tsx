@@ -1,7 +1,7 @@
-import SimpleInput from '@UI/SimpleInput';
 import React from 'react';
 import { Text, TextStyle, View, ViewStyle } from 'react-native';
 import styles from './styles';
+import { SimpleInput } from '../../UI';
 
 export interface TextFieldProps {
   field: {
@@ -22,10 +22,11 @@ const TextField = ({
   label,
   labelStyles,
   containerStyle,
-  placeholder,
+  placeholder = '',
   onBlur,
 }: TextFieldProps) => {
-  if (typeof value !== 'string') {
+  debugger;
+  if (value !== undefined && typeof value !== 'string') {
     throw new Error("Text Field Components must have a value type of 'string'");
   } else {
     return (

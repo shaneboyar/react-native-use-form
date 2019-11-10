@@ -1,5 +1,5 @@
 import { Dimensions, Platform } from 'react-native';
-import { advanceVoid, darkVoid, pure } from './colors';
+import { advanceVoid, darkVoid, pure } from '../Colors';
 
 const { width, height } = Dimensions.get('window');
 

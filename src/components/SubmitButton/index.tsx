@@ -14,7 +14,7 @@ export interface SubmitButtonProps {
   buttonStyle?: ViewStyle;
   buttonTitleStyle?: TextStyle;
   title?: string;
-  disabled: boolean;
+  disabled?: boolean;
   handleSubmit(): void;
 }
 
