@@ -1,0 +1,54 @@
+Arguments: 
+  /Users/shaneboyar/.nvm/versions/node/v12.0.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add react @types/react lodash @types/lodash react-native @types/react-native
+
+PATH: 
+  /Users/shaneboyar/google-cloud-sdk/bin:/Users/shaneboyar/gems/bin:/Users/shaneboyar/.nvm/versions/node/v12.0.0/bin:/Users/shaneboyar/.antigen/bundles/rauchg/wifi-password:/Users/shaneboyar/.jenv/shims:/Users/shaneboyar/.rbenv/shims:/usr/local/bin:/usr/local/opt/curl/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/share/python:/Users/shaneboyar/Library/Android/sdk/emulator:/Users/shaneboyar/Library/Android/sdk/tools:/Users/shaneboyar/Library/Android/sdk/tools/bin:/Users/shaneboyar/Library/Android/sdk/platform-tools:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein:/Users/shaneboyar/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/Users/shaneboyar/.antigen/bundles/tomsquest/nvm-auto-use.zsh:/Users/shaneboyar/.antigen/bundles/rauchg/wifi-password:/Users/shaneboyar/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/shaneboyar/.antigen/bundles/lukechilds/zsh-nvm:/Users/shaneboyar/.antigen/bundles/geometry-zsh/geometry
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.0.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/shaneboyar/projects/react-native-use-form/package.json: Unexpected token } in JSON at position 614
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "react-native-use-form",
+    "version": "1.0.0",
+    "description": "A hook-based form creator for React Native",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/shaneboyar/react-native-use-form.git"
+    },
+    "keywords": [
+      "react-native",
+      "hooks",
+      "form"
+    ],
+    "author": "Shane Boyar",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/shaneboyar/react-native-use-form/issues"
+    },
+    "homepage": "https://github.com/shaneboyar/react-native-use-form#readme",
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

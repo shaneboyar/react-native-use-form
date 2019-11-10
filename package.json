@@ -1,0 +1,40 @@
+{
+  "name": "react-native-use-form",
+  "version": "1.0.0",
+  "description": "A hook-based form creator for React Native",
+  "main": "index.ts",
+  "types":"index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaneboyar/react-native-use-form.git"
+  },
+  "keywords": [
+    "react-native",
+    "hooks",
+    "form"
+  ],
+  "author": "Shane Boyar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaneboyar/react-native-use-form/issues"
+  },
+  "homepage": "https://github.com/shaneboyar/react-native-use-form#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "typescript": "^3.7.2",
+    "@types/lodash": "^4.14.146"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-native": "^0.61.4"
+  },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.2.0",
+    "react-native-svg-transformer": "^0.13.0",
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22"
+  }
+}

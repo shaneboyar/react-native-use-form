@@ -1,0 +1,10 @@
+e2e/
+jenkins/scripts/
+android/
+metro.config.js
+jest.config.js
+NewRelicAgentRN.js
+NewRelicRN.js
+node_modules/
+android/
+ios/
