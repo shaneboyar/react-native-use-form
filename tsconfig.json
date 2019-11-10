@@ -3,9 +3,9 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
     "jsx": "react-native",
     "lib": ["es2017"],
     "moduleResolution": "node",
@@ -18,16 +18,11 @@
     "resolveJsonModule": true,
     "paths": {
       "@icons": ["./assets/icons"],
-      "@UI/*": ["./components/UI/*"],
+      "@components/*": ["./components/*"],
       "@styles/*": ["./styles/*"],
     },
     "strict": true,
-    "target": "esnext",
-    "types": [
-      "lodash",
-      "react",
-      "react-native",
-    ]
+    "target": "esnext"
   },
   "exclude": [
     "node_modules",
