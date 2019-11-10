@@ -1,6 +1,6 @@
-import { scale } from '@styles/base';
-import { lightVoid } from '@styles/colors';
-import { scaleFont } from '@styles/font';
+import { scale } from 'src/styles/base';
+import { lightVoid } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 import { StyleSheet } from 'react-native';
 
 export const placeholderColor = lightVoid;

@@ -1,6 +1,6 @@
-import { scale } from '@styles/base';
-import { lightVoid, advanceVoid, lightGray } from '@styles/colors';
-import { scaleFont } from '@styles/font';
+import { scale } from 'src/styles/base';
+import { lightVoid, advanceVoid, lightGray } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
@@ -15,7 +15,6 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   input: {
-    fontFamily: 'Futura',
     fontSize: scaleFont(16),
     color: lightVoid,
   },

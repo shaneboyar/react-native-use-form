@@ -1,10 +1,9 @@
 import { StyleSheet, TextStyle } from 'react-native';
-import { scale } from '@styles/base';
-import { advanceVoid, pure, gray, advanceRed } from '@styles/colors';
-import { scaleFont } from '@styles/font';
+import { scale } from 'src/styles/base';
+import { advanceVoid, pure, gray, advanceRed } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 
 export const labelStyles: TextStyle = {
-  fontFamily: 'Futura',
   fontSize: scaleFont(14),
   lineHeight: scale(14),
   color: advanceVoid,
@@ -25,7 +24,6 @@ export default StyleSheet.create({
     borderWidth: scale(1),
     borderRadius: scale(8),
     borderColor: gray,
-    fontFamily: 'Futura',
     fontSize: scaleFont(16),
   },
   invalid: {

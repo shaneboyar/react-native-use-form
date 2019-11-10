@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scale } from '@styles/base';
-import { pure, gray, advanceVoid } from '@styles/colors';
-import { scaleFont } from '@styles/font';
+import { scale } from 'src/styles/base';
+import { pure, gray, advanceVoid } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 import { labelStyles } from '../TextField/styles';
 
 export default StyleSheet.create({
@@ -15,7 +15,6 @@ export default StyleSheet.create({
   },
   input: {
     color: advanceVoid,
-    fontFamily: 'Futura',
     fontSize: scaleFont(16),
   },
   field: {

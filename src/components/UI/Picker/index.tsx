@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 import { Picker as RNPicker, View, ViewStyle, TextStyle, StyleProp } from 'react-native';
-import { ChevronDownIcon } from '@icons';
+import { ChevronDownIcon } from 'src/assets/icons';
 import styles from './styles';
 
 export interface OptionProps {

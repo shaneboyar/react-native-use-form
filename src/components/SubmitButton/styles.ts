@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scaleFont } from '@styles/font';
-import { mediumVoid, lightGray } from '@styles/colors';
-import { scale } from '@styles/base';
+import { scaleFont } from 'src/styles/font';
+import { mediumVoid, lightGray } from 'src/styles/colors';
+import { scale } from 'src/styles/base';
 
 export default StyleSheet.create({
   container: {
@@ -13,7 +13,6 @@ export default StyleSheet.create({
   },
   buttonTitle: {
     fontSize: scaleFont(16),
-    fontFamily: 'Futura',
     textAlign: 'center',
     color: mediumVoid,
     lineHeight: scale(24),

@@ -8,9 +8,9 @@
       {
         "root": "./",
         "alias": {
-          "@icons": "./assets/icons",
-          "@components": "./components",
-          "@styles": "./styles"
+          "@icons": "./src/assets/icons",
+          "@components": "./src/components",
+          "@styles": "./src/styles"
         }
       }
     ]

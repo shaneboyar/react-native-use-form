@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scale } from '@styles/base';
-import { advanceVoid } from '@styles/colors';
-import { scaleFont } from '@styles/font';
+import { scale } from 'src/styles/base';
+import { advanceVoid } from 'src/styles/colors';
+import { scaleFont } from 'src/styles/font';
 
 export default StyleSheet.create({
   checkboxFieldContainer: {
@@ -15,7 +15,6 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
   },
   checkboxFieldLabel: {
-    fontFamily: 'Futura',
     fontSize: scaleFont(12),
     color: advanceVoid,
     marginLeft: scale(16),
