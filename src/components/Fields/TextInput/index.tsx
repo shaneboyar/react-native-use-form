@@ -19,8 +19,8 @@ export interface TextInputProps extends RNTextInputProps {
   label?: string;
   labelStyles?: StyleProp<TextStyle>;
   inputStyles?: StyleProp<TextStyle>;
-  invalidFieldStyles: StyleProp<TextStyle>;
-  errorMessageStyles: StyleProp<TextStyle>;
+  invalidFieldStyles?: StyleProp<TextStyle>;
+  errorMessageStyles?: StyleProp<TextStyle>;
   placeholder?: string;
   containerStyles?: StyleProp<ViewStyle>;
   onBlur?: () => void;

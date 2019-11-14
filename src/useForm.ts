@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { compact, map, every, get, forEach, isEqual } from 'lodash';
 import { ValidatorFunction } from './validators';
 
@@ -79,7 +79,7 @@ function useForm<T extends {}>(initialValues: T) {
     return compact(map(validators, validator => validator(value)));
   };
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     let newState = { ...form } as FormState;
     forEach(form.fields, ({ value, validators }, key) => {
       if (validators && validators.length > 0) {
@@ -107,14 +107,23 @@ function useForm<T extends {}>(initialValues: T) {
     if (!isEqual(form, newState)) {
       setForm(newState);
     }
-  };
+  }, [form]);
 
   /**
    * When a field's value is updated, we can recheck the validity of the entire form.
    */
+  const previousValues = useRef<Array<T[keyof T]>>();
   useEffect(() => {
+    previousValues.current = map(form.fields, field => field.value);
+  });
+
+  useEffect(() => {
+    const currentValues = map(form.fields, field => field.value);
+    if (isEqual(previousValues.current, currentValues)) {
+      return;
+    }
     validateForm();
-  }, [map(form.fields, field => field.value)]);
+  });
 
   /**
    * Since the initial form can be created with data returned from elsewhere,
@@ -191,10 +200,10 @@ function useForm<T extends {}>(initialValues: T) {
         fields: {
           ...formState.fields,
           [key]: {
-            value: newValue,
-            newErrors,
+            errors: newErrors,
             valid: fieldIsValid,
             validators,
+            value: newValue,
           },
         },
       }));

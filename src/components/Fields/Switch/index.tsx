@@ -15,9 +15,9 @@ export interface SwitchProps extends RNSwitchProps {
     setValue(value: boolean): void;
   };
   containerStyle?: StyleProp<ViewStyle>;
-  switchStyles: StyleProp<ViewStyle>;
-  labelContainerStyles: StyleProp<ViewStyle>;
-  labelStyles: StyleProp<TextStyle>;
+  switchStyles?: StyleProp<ViewStyle>;
+  labelContainerStyles?: StyleProp<ViewStyle>;
+  labelStyles?: StyleProp<TextStyle>;
   label?: string;
 }
 
