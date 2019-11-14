@@ -1,9 +1,16 @@
 import React from 'react';
-import { Text, TextStyle, View, ViewStyle } from 'react-native';
+import {
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+  TextInput,
+  TextInputProps,
+  StyleProp,
+} from 'react-native';
 import styles from './styles';
-import { SimpleInput } from '../../UI';
 
-export interface TextFieldProps {
+export interface TextFieldProps extends TextInputProps {
   field: {
     setValue: (value: string) => void;
     value: string;
@@ -11,9 +18,12 @@ export interface TextFieldProps {
     isValid: boolean;
   };
   label?: string;
-  labelStyles?: TextStyle;
+  labelStyles?: StyleProp<TextStyle>;
+  fieldStyles?: StyleProp<TextStyle>;
+  invalidFieldStyles: StyleProp<TextStyle>;
+  errorMessageStyles: StyleProp<TextStyle>;
   placeholder?: string;
-  containerStyle?: ViewStyle;
+  containerStyles?: StyleProp<ViewStyle>;
   onBlur?: () => void;
 }
 
@@ -21,8 +31,11 @@ const TextField = ({
   field: { setValue, value = '', errors, isValid },
   label,
   labelStyles,
-  containerStyle,
-  placeholder = '',
+  fieldStyles,
+  invalidFieldStyles,
+  containerStyles,
+  errorMessageStyles,
+  placeholder,
   onBlur,
 }: TextFieldProps) => {
   debugger;
@@ -30,18 +43,17 @@ const TextField = ({
     throw new Error("Text Field Components must have a value type of 'string'");
   } else {
     return (
-      <View style={[styles.container, containerStyle]}>
-        <Text style={[styles.label, labelStyles]}>{label}</Text>
-        <SimpleInput
+      <View style={containerStyles}>
+        <Text style={labelStyles}>{label}</Text>
+        <TextInput
           placeholder={placeholder}
-          label={label}
           value={value}
           onChangeText={(newValue: string) => setValue(newValue)}
-          inputStyles={[styles.field, !isValid ? styles.invalid : {}]}
+          style={[fieldStyles, !isValid && invalidFieldStyles]}
           onBlur={onBlur}
         />
         {errors ? (
-          <Text style={styles.errorMessage}>{errors.join(' ')}</Text>
+          <Text style={errorMessageStyles}>{errors.join(' ')}</Text>
         ) : null}
       </View>
     );
