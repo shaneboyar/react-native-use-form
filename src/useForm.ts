@@ -7,14 +7,14 @@ export type Field<T> = {
     value: T[K];
     errors: string[];
     isValid?: boolean;
-    validators?: ValidatorFunction<T[K]>[];
+    validators?: Array<ValidatorFunction<T[K]>>;
   };
 };
 
-export type Form<T> = {
+export interface Form<T> {
   fields: Field<T>;
   isValid: boolean;
-};
+}
 
 /**
  * This hook is to be used in conjuction with the fields inside
@@ -42,7 +42,6 @@ function useForm<T extends {}>(initialValues: T) {
     forEach(values, (value, key) => {
       type Key = keyof FormState['fields'];
       formState.fields[key as Key] = {
-        value,
         errors: formState.fields[key as Key]
           ? formState.fields[key as Key].errors
           : [],
@@ -52,6 +51,7 @@ function useForm<T extends {}>(initialValues: T) {
         validators: formState.fields[key as Key]
           ? formState.fields[key as Key].validators
           : [],
+        value,
       };
     });
     return formState;
@@ -72,9 +72,9 @@ function useForm<T extends {}>(initialValues: T) {
    * @param validators
    * @param value
    */
-  const returnErrors = <T>(
-    validators: ValidatorFunction<T>[],
-    value: T
+  const returnErrors = (
+    validators: Array<ValidatorFunction<T[keyof T]>>,
+    value: T[keyof T]
   ): string[] => {
     return compact(map(validators, validator => validator(value)));
   };
@@ -84,16 +84,16 @@ function useForm<T extends {}>(initialValues: T) {
     forEach(form.fields, ({ value, validators }, key) => {
       if (validators && validators.length > 0) {
         const errors = returnErrors(validators, value);
-        const isValid = errors.length === 0;
+        const fieldIsValid = errors.length === 0;
         newState = {
           ...newState,
           fields: {
             ...newState.fields,
             [key]: {
-              value,
               errors,
-              isValid,
+              isValid: fieldIsValid,
               validators,
+              value,
             },
           },
         };
@@ -104,7 +104,9 @@ function useForm<T extends {}>(initialValues: T) {
     );
     newState = { ...newState, isValid };
 
-    !isEqual(form, newState) && setForm(newState);
+    if (!isEqual(form, newState)) {
+      setForm(newState);
+    }
   };
 
   /**
@@ -123,17 +125,17 @@ function useForm<T extends {}>(initialValues: T) {
    */
   const validateField = <K extends keyof FormField>(
     key: K,
-    validators?: ValidatorFunction<T[K]>[]
+    validators?: Array<ValidatorFunction<T[keyof T]>>
   ) => {
     const field = form.fields[key];
     if (validators && validators.length > 0) {
       const { value } = field;
-      const errors = returnErrors<T[K]>(validators, value);
+      const errors = returnErrors(validators, value);
       const isValid = errors.length === 0;
-      setForm(form => ({
-        ...form,
+      setForm(formState => ({
+        ...formState,
         fields: {
-          ...form.fields,
+          ...formState.fields,
           [key]: {
             ...field,
             errors,
@@ -143,10 +145,10 @@ function useForm<T extends {}>(initialValues: T) {
         },
       }));
     } else {
-      setForm(form => ({
-        ...form,
+      setForm(formState => ({
+        ...formState,
         fields: {
-          ...form.fields,
+          ...formState.fields,
           [key]: {
             ...field,
             isValid: true,
@@ -174,31 +176,36 @@ function useForm<T extends {}>(initialValues: T) {
    */
   function useField<K extends keyof FormState['fields']>(
     key: K,
-    validators?: ValidatorFunction<T[K]>[]
+    validators?: Array<ValidatorFunction<T[keyof T]>>
   ) {
     const field = form.fields[key];
-    !field.isValid &&
-      field.errors.length === 0 &&
+    if (!field.isValid && field.errors.length === 0) {
       validateField(key, validators);
+    }
 
     function setValue(newValue: T[K]) {
-      const errors = validators ? returnErrors(validators, newValue) : [];
-      const isValid = errors.length === 0;
-      setForm(form => ({
-        ...form,
+      const newErrors = validators ? returnErrors(validators, newValue) : [];
+      const fieldIsValid = newErrors.length === 0;
+      setForm(formState => ({
+        ...formState,
         fields: {
-          ...form.fields,
-          [key]: { value: newValue, errors, isValid, validators },
+          ...formState.fields,
+          [key]: {
+            value: newValue,
+            newErrors,
+            valid: fieldIsValid,
+            validators,
+          },
         },
       }));
     }
 
-    const { value, errors, isValid } = form.fields[key];
+    const { errors, isValid, value } = form.fields[key];
     return {
-      value,
-      setValue,
       errors,
       isValid,
+      setValue,
+      value,
     };
   }
 
@@ -225,10 +232,10 @@ function useForm<T extends {}>(initialValues: T) {
 
   return {
     form,
+    onSubmit,
     setForm,
     updateForm,
     useField,
-    onSubmit,
   };
 }
 
