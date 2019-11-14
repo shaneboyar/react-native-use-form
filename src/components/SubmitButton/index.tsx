@@ -5,14 +5,13 @@ import {
   TouchableOpacity,
   View,
   ViewStyle,
+  StyleProp,
 } from 'react-native';
-// import { FormContext, FormDataReturnType } from '../context';
-import styles from './styles';
 
 export interface SubmitButtonProps {
-  containerStyle?: ViewStyle;
-  buttonStyle?: ViewStyle;
-  buttonTitleStyle?: TextStyle;
+  containerStyle?: StyleProp<ViewStyle>;
+  buttonStyle?: StyleProp<ViewStyle>;
+  buttonTitleStyle?: StyleProp<TextStyle>;
   title?: string;
   disabled?: boolean;
   handleSubmit(): void;
@@ -27,13 +26,13 @@ const SubmitButton = ({
   disabled = false,
 }: SubmitButtonProps) => {
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View style={containerStyle}>
       <TouchableOpacity
-        style={[styles.button, buttonStyle]}
+        style={buttonStyle}
         onPress={handleSubmit}
         disabled={disabled}
       >
-        <Text style={[styles.buttonTitle, buttonTitleStyle]}>{title}</Text>
+        <Text style={buttonTitleStyle}>{title}</Text>
       </TouchableOpacity>
     </View>
   );

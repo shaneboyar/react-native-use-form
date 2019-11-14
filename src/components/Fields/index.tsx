@@ -1,5 +1,5 @@
-import CheckboxField from './CheckboxField';
-import PickerField from './PickerField';
-import TextField from './TextField';
+import Switch from './Switch';
+import Picker from './Picker';
+import TextInput from './TextInput';
 
-export { CheckboxField, PickerField, TextField };
+export { Switch, Picker, TextInput };
